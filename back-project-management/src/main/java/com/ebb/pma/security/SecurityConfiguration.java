@@ -48,10 +48,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		/**.antMatchers("/h2-console/**").permitAll()*/
 		/**.antMatchers("/employees/new").hasAuthority("ADMIN")*/
 		http.authorizeRequests()
-		.antMatchers("/projects/new").hasRole("ADMIN")
-		.antMatchers("/projects/save").hasRole("ADMIN")
-		.antMatchers("/employees/new").hasRole("ADMIN")
-		.antMatchers("/employees/save").hasRole("ADMIN")
+		//.antMatchers("/projects/new").hasRole("ADMIN")
+		//.antMatchers("/projects/save").hasRole("ADMIN")
+		//.antMatchers("/employees/new").hasRole("ADMIN")
+		//.antMatchers("/employees/save").hasRole("ADMIN")
 		.antMatchers("/", "/**").permitAll()  //.authenticated().and().formLogin();
 		.and()
 		.formLogin(); //.loginPage("login-page");

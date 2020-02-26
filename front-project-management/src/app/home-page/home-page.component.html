@@ -1,0 +1,67 @@
+<div class="container">
+    <h3>Main Dashboard</h3>
+	<h4>Current Projects</h4>
+    <!-- Projects list -->
+    <div class="row">
+        <div class="col-md-6">
+            <table class="table table-striped">
+                <thead>
+                    <th>Name</th>
+                    <th>Stage</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let project of projects | async">
+                        <td>{{project.name}}</td>
+                        <td>
+                            <select [(ngModel)]="project.stage">
+                                <option *ngFor="let stage of stages" [value]="stage.value">{{stage.view}}</option>
+                            </select>
+                        </td>
+                        <td class="badge badge-light text-wrap" style="width: 25rem;">{{project.description}}</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--<div class="col-md-4">
+            <canvas id="myPieChart" height="50" width="50"></canvas>
+            <script>
+                var chartData = "[[${projectStatusCount}]]";
+            </script>
+        </div> -->
+    </div>
+</div>
+
+<div class="container">
+    <h4>Current Employees</h4>
+    <!-- Employees list -->
+    <div class="row">
+        <div class="col-md-6">
+            <table class="table table-striped">
+                <thead>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Email address</th>
+                    <th>phone</th>
+                    <th>Gender</th>
+                </thead>
+                <tbody>
+                <tr *ngFor="let employee of employees | async">
+                    <td>{{employee.firstName}}</td>
+                    <td>{{employee.lastName}}</td>
+                    <td>{{employee.email}}</td>
+                    <td>{{employee.phone}}</td>
+                    <td>
+                        <select id="gender" name="gender" [(ngModel)]="employee.gender">
+                            <option *ngFor="let gender of genders" [value]="gender.value">{{gender.view}}</option>
+                        </select>
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

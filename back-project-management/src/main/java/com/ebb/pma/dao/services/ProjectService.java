@@ -29,4 +29,10 @@ public class ProjectService {
 		
 		return projectRepository.getProjectStatus();
 	}
+	
+	public List<Project> findAll(){
+		
+		return projectRepository.findAll();
+	}
+
 }

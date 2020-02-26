@@ -22,7 +22,9 @@ public interface EmployeeRepository extends PagingAndSortingRepository<Employee,
 			"GROUP BY FIRST_NAME, LAST_NAME " + 
 			"ORDER BY 3 DESC")
 	public List<EmployeeProject> employeeProjects();
-
+	
 	public Employee findByEmail(String value);
+	
+	public List<Employee> findAll();
 	
 }

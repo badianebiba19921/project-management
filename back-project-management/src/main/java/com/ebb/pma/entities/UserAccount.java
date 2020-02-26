@@ -25,9 +25,7 @@ public class UserAccount {
 	
 	private boolean enabled = true;
 	
-	public UserAccount() {
-		
-	}
+	public UserAccount() {}
 
 	public long getUserId() {
 		return userId;

@@ -1,0 +1,18 @@
+<h2>Project Details</h2>
+
+<hr/>
+<div *ngIf="project">
+  <div>
+    <label><b>Name: </b></label> {{project.name}}
+  </div>
+  <div>
+    <label><b>stage: </b></label> {{project.stage}}
+  </div>
+  <div>
+    <label><b>Description: </b></label> {{project.description}}
+  </div>
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to Project List</button><br>

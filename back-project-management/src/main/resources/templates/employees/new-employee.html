@@ -11,15 +11,49 @@
 	<div class="container">
 		<form th:action="@{/employees/save}" th:object="${employee}" method="POST">
 		
-		<input type="text" placeholder="First Name" th:field="${employee.firstName}">
-		
-		<input type="text" placeholder="Last Name" th:field="${employee.lastName}">
-		
-		<input type="text" placeholder="Email Address" th:field="${employee.email}">
+			<div class="form-group">
+            	<label for="firstName" class="col-sm-3 control-label">First Name</label>
+                <div class="col-sm-9">
+                	<input type="text" id="firstName" placeholder="First Name" th:field="${employee.firstName}" class="form-control" autofocus>
+              	</div>
+          	</div>
+          	
+          	<div class="form-group">
+            	<label for="firstName" class="col-sm-3 control-label">First Name</label>
+                <div class="col-sm-9">
+                	<input type="text" id="lastName" placeholder="Last Name" th:field="${employee.lastName}" class="form-control" autofocus>
+              	</div>
+          	</div>
+          	
+          	<div class="form-group">
+               	<label for="email" class="col-sm-3 control-label">Email* </label>
+             	<div class="col-sm-9">
+                  	<input type="email" id="email" placeholder="Email address" class="form-control" name="email" th:field="${employee.email}">
+               	</div>
+          	</div>
+          	
+          	<div class="form-group">
+               	<label for="phone" class="col-sm-3 control-label">Phone Number</label>
+             	<div class="col-sm-9">
+                  	<input type="text" id="phone" placeholder="Phone number" class="form-control" name="phone" th:field="${employee.phone}">
+               	</div>
+          	</div>
+          	
+          	<div class="form-group">
+               	<label for="phone" class="col-sm-3 control-label">Gender</label>
+             	<div class="col-sm-9">
+                  	<input type="radio" th:field="*{gender}" th:value="M">
+        			<label th:for="${#ids.prev('gender')}">Male</label>
+				</div>
+				<div class="col-sm-9">
+        			<input type="radio" th:field="*{gender}" th:value="F">
+        			<label th:for="${#ids.prev('gender')}">Female</label>
+               	</div>
+          	</div>
 		
 		<!-- <input type="hidden" name="_csrf" th:value="${_csrf.token}" /> -->
 				
-		<button type="submit">Create Employee</button>
+			<button type="submit">Create Employee</button>
 		
 		</form>
 	</div>

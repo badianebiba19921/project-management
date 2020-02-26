@@ -31,6 +31,11 @@ public class EmployeeService {
 		return employeeRepository.employeeProjects();
 	}
 	
+	public List<Employee> findAll(){
+		
+		return employeeRepository.findAll();
+	}
+	
 	// Construtor Injection
 	/**@Autowired
 	public void setEmployeeRepository(EmployeeRepository employeeRepository) {

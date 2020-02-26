@@ -1,0 +1,36 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Project List</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Stage</th>
+          <th>Description</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let project of projects | async">
+          <td>{{project.name}}</td>
+          <td>
+            <select [(ngModel)]="project.stage">
+              <option *ngFor="let stage of stages" [value]="stage.value">{{stage.view}}</option>
+            </select>
+          </td>
+          <td class="badge badge-light text-wrap" style="width: 25rem;">{{project.description}}</td>
+          <td>
+            <button (click)="deleteProject(project.projectId)" class="btn btn-danger">Delete</button>
+            <button (click)="updateProject(project.projectId)" class="btn btn-secondary" style="margin-left: 7px">Update</button>
+            <button (click)="projectDetails(project.projectId)" class="btn btn-info" style="margin-left: 7px">Details</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div>
+      <button (click)="addProject()" class="btn btn-primary btn-lg btn-block">Add Project</button>
+    </div>
+  </div>
+</div>
