@@ -1,4 +1,4 @@
-employeeId,firstname,lastname,email,phone,gender
-1,elhadji,badiane,badianebiba@gmail.com,54646677,male
-2,lauta,diop,lauta.diop@gmail.com,54646677,female
-3,aliou,ndiaye,aliou.ndiaye@gmail.com,54646677,male
+firstname;lastname;email;phone;gender
+Elhadji;Badiane;badianebiba@gmail.com;00221765464667;male
+Lauta;Diop;lauta.diop@gmail.com;00221765464667;Female
+Aliou;Ndiaye;aliou.ndiaye@gmail.com;00221765464667;Male

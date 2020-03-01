@@ -1,0 +1,5 @@
+name;stage;domain;description;strEmployees
+Large Production Deploy;NOTSTARTED;Production Deployment;This requires all hands on deck for the final deployment of the software into production;Seydou:Ndiaye:seydou.ndiaye@gmail.com:+221775448574:Male
+New Employee Budget;COMPLETED;Project Budget Management;Decide on a new employee bonus budget for the year and figureout who will be promoted;Fallou:Ndiaye:fallou.ndiaye@gmail.com:+221775448574:Male|Seydou:Ndiaye:seydou.ndiaye@gmail.com:+221775448574:Male
+Office Reconstruction;INPROGRESS;IT Application Maintenance;The office building in Monroe has been damaged due to hurricane in the region. This needs to be reconstructed;Fatou:Diop:fatou.diop@gmail.com:+221775448574:Female|Babacar:Dieng:babacar.dieng@gmail.com:+221775448574:Male
+Improve Intranet Security;INPROGRESS;IT Networks and Infrastructures;With the recent data hack, the office security needs to be improved and proper security team needs to be hired for implementation;Babacar:Dieng:babacar.dieng@gmail.com:+221775448574:Male|Lota:Diop:lota.diop@gmail.com:+221775448574:Female

@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 
 <html xmlns:th="http://www.thymeleaf.org">
-
 <head th:replace="layouts :: header"></head>
-
 <body>
 
 	<nav th:replace="layouts :: navbar"></nav>
-	
 	<div class="container">
 		
-		<form th:action="@{/employees/run-batch}" enctype="multipart/form-data" method="POST">
+		<form th:action="@{/projects/run-batch}" enctype="multipart/form-data" method="POST">
 		
 			<div class="form-group">
             	<label for="myFile" class="col-sm-3 control-label">Process File</label>
@@ -18,19 +15,11 @@
                 	<input type="file" name="myFile" />
               	</div>
           	</div>
-          	
-          	<table th:if="${not #lists.isEmpty(messages)}">
-    			<tr th:each="message : ${messages}">
-        			<td th:text="${message.content}">The first name</td>
-    			</tr>
-			</table>
 			
-       		<button type="submit">Employees Loading Batch</button>
+       		<button type="submit">Projects Loading Batch</button>
     
     	</form>
-		
 	</div>
 	
 </body>
-
 </html>

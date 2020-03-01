@@ -14,16 +14,20 @@
 			<hr>
 			
 			<!--  Add New Project Button -->
-			<a th:href="@{/projects/new}"
-				class="btn btn-primary btn-sm mb-3"> 
-				New Project 
+			<a th:href="@{/projects/new}" class="btn btn-primary btn-sm mb-3"> 
+				Add New Project 
 			</a>
-			<br></br>
+			
+			<!-- Add Upload Multiple Employees Button -->
+			<a th:href="@{/projects/batch}" class="btn btn-primary btn-sm mb-3" style="margin-left:30px;">
+				Loading Projects Batch Call 
+			</a> <br>
+			
 			<table class="table table-bordered table-striped">
 				<thead class="thead-dark">
 					<tr>
 						<th>Project Name</th>
-						<th>Project Stage</th>
+						<th>Stage</th>
 						<th>Project Description</th>
 					</tr>
 				</thead>		

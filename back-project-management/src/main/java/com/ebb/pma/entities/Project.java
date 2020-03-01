@@ -13,6 +13,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Transient;
+import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -28,7 +30,13 @@ public class Project {
 	
 	private String name;
 	private String stage; // NOTSTARTED, COMPETED, INPROGRESS
+	
+	@Size(min=2, max=2)
+	private String domain;
 	private String description;
+	
+	@Transient
+	private String strEmployees;
 	
 	/**@OneToMany(mappedBy="project") 
 	 private List<Employee> employees;*/
@@ -42,15 +50,17 @@ public class Project {
 	@JsonIgnore
 	private List<Employee> employees;
 	
-	public Project() {
-		
-	}
+	public Project() {}
 	
-	public Project(String name, String stage, String description) {
+	public Project(String name, String stage, @Size(min = 2, max = 2) String domain, String description,
+			String strEmployees, List<Employee> employees) {
 		super();
 		this.name = name;
 		this.stage = stage;
+		this.domain = domain;
 		this.description = description;
+		this.strEmployees = strEmployees;
+		this.employees = employees;
 	}
 	
 	public List<Employee> getEmployees() {
@@ -93,6 +103,22 @@ public class Project {
 		this.description = description;
 	}
 	
+	public String getDomain() {
+		return domain;
+	}
+
+	public void setDomain(String domain) {
+		this.domain = domain;
+	}
+
+	public String getStrEmployees() {
+		return strEmployees;
+	}
+
+	public void setStrEmployees(String strEmployees) {
+		this.strEmployees = strEmployees;
+	}
+
 	// Convenience method
 	public void addEmployee(Employee emp) {
 		

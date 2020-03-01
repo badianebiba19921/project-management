@@ -40,14 +40,14 @@ public class Employee {
 	//@Column(unique=true)
 	//@UniqueValue
 	@NotNull
-	@Email
+	//@Email
 	private String email;
 	
 	@NotNull
 	private String phone;
 	
 	@NotNull
-	@Size(min=1, max=1)
+	//@Size(min=1, max=1)
 	private String gender;
 	
 	/**@ManyToOne(cascade= {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.PERSIST},

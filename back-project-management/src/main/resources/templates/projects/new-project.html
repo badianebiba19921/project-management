@@ -10,27 +10,59 @@
 	
 	<div class="container">
 		<form th:action="@{/projects/save}" th:object="${project}" method="POST">
+			<br/>
+			<div class="form-group">
+            	<label for="projectName" class="col-sm-3 control-label">Project Name</label>
+                <div class="col-sm-9">
+                	<input type="text" id="projectName" placeholder="Project Name" th:field="${project.name}" class="form-control" autofocus>
+              	</div>
+          	</div>
+          	
+          	<div class="form-group">
+            	<label for="projectDomain" class="col-sm-3 control-label">Project Domain</label>
+                <div class="col-sm-9">
+                	<select name="projectDomain" th:field="${project.domain}">
+                		<option selected value=""> Please select...</option>
+                    	<option th:each="key : ${mapDomains.keySet()}"
+                                 th:value="${key}" th:utext="${mapDomains.get(key)}">
+              			</option>
+                  	</select>
+              	</div>
+          	</div>
+
+          	<div class="form-group">
+            	<label for="projectStage" class="col-sm-3 control-label">Project Stage</label>
+                <div class="col-sm-9">
+                	<select name="projectStage" th:field="${project.stage}">
+                		<option selected value=""> Please select...</option>
+						<option th:value="NOTSTARTED"> Not Started</option>
+						<option th:value="INPROGRESS"> In Progress</option>
+						<option th:value="COMPLETED"> Completed</option>
+					</select>
+              	</div>
+          	</div>
+          	
+          	<div class="form-group">
+            	<label for="description" class="col-sm-3 control-label">Project Description</label>
+                <div class="col-sm-9">
+                	<textarea type="text" name="description" rows="3" cols="40" placeholder="Enter Project Description" th:field="${project.description}"></textarea>
+              	</div>
+          	</div>
+          	
+          	<div class="form-group">
+            	<label for="description" class="col-sm-3 control-label">Select Project Employees</label>
+                <div class="col-sm-9">
+                	<select th:field="*{employees}" multiple="multiple">
+						<option th:each="anEmployee : ${allEmployees}"
+					 		th:value="${anEmployee.employeeId}"
+					 		th:text="${anEmployee.lastName} + ' - ' + ${anEmployee.firstName}">
+						</option>
+					</select>
+              	</div>
+          	</div>
+			<!-- <input type="hidden" name="_csrf" th:value="${_csrf.token}" /> -->
 		
-		<input type="text" placeholder="Project Name" th:field="${project.name}">
-		
-		<select th:field="${project.stage}">
-			<option th:value="NOTSTARTED"> Not Started</option>
-			<option th:value="INPROGRESS"> In Progress</option>
-			<option th:value="COMPLETED"> Completed</option>
-		</select>
-		
-		<textarea type="text" placeholder="Enter Project Description" th:field="${project.description}"></textarea>
-		
-		<select th:field="*{employees}" multiple="multiple">
-			<option th:each="anEmployee : ${allEmployees}"
-					 th:value="${anEmployee.employeeId}"
-					 th:text="${anEmployee.lastName} + ' - ' + ${anEmployee.firstName}">
-			</option>
-		</select>
-		
-		<!-- <input type="hidden" name="_csrf" th:value="${_csrf.token}" /> -->
-		
-		<button type="submit">Create Project</button>
+			<button type="submit">Create Project</button>
 		
 		</form>
 	</div>
